@@ -57,7 +57,7 @@ function pageActiveFromNavLink(obj) {
 }
 
 function loadDatapackage(character, scenario) {
-    const file_path = '';
+    let file_path = '';
     
     if (window.location.host == 'fuzzygameson.github.io') {
         file_path = 'RE2R_AP_SetupGuide/';
