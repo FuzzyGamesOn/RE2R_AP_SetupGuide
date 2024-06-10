@@ -57,9 +57,15 @@ function pageActiveFromNavLink(obj) {
 }
 
 function loadDatapackage(character, scenario) {
-    const item_data = $.get(`data/${character}/items.json`).done(function (data) { return data; });
-    const location_data = $.get(`data/${character}/${scenario}/locations.json`).done(function (data) { return data; });
-    const location_hardcore_data = $.get(`data/${character}/${scenario}/locations_hardcore.json`).done(function (data) { return data; });
+    const file_path = '';
+    
+    if (window.location.host == 'fuzzygameson.github.io') {
+        file_path = 'RE2R_AP_SetupGuide/';
+    }
+
+    const item_data = $.get(`${file_path}data/${character}/items.json`).done(function (data) { return data; });
+    const location_data = $.get(`${file_path}data/${character}/${scenario}/locations.json`).done(function (data) { return data; });
+    const location_hardcore_data = $.get(`${file_path}data/${character}/${scenario}/locations_hardcore.json`).done(function (data) { return data; });
 
     Promise.all([item_data, location_data, location_hardcore_data]).then(
         function (combined_data) {
