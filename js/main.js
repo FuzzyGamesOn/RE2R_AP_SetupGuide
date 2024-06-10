@@ -59,9 +59,9 @@ function pageActiveFromNavLink(obj) {
 function loadDatapackage(character, scenario) {
     let file_path = '';
     
-    if (window.location.host == 'fuzzygameson.github.io') {
-        file_path = 'RE2R_AP_SetupGuide/';
-    }
+    // if (window.location.host == 'fuzzygameson.github.io') {
+    //     file_path = 'RE2R_AP_SetupGuide/';
+    // }
 
     const item_data = $.get(`${file_path}data/${character}/items.json`).done(function (data) { return data; });
     const location_data = $.get(`${file_path}data/${character}/${scenario}/locations.json`).done(function (data) { return data; });
