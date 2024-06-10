@@ -57,9 +57,9 @@ function pageActiveFromNavLink(obj) {
 }
 
 function loadDatapackage(character, scenario) {
-    const item_data = $.get(`./data/${character}/items.json`).done(function (data) { return data; });
-    const location_data = $.get(`./data/${character}/${scenario}/locations.json`).done(function (data) { return data; });
-    const location_hardcore_data = $.get(`./data/${character}/${scenario}/locations_hardcore.json`).done(function (data) { return data; });
+    const item_data = $.get(`data/${character}/items.json`).done(function (data) { return data; });
+    const location_data = $.get(`data/${character}/${scenario}/locations.json`).done(function (data) { return data; });
+    const location_hardcore_data = $.get(`data/${character}/${scenario}/locations_hardcore.json`).done(function (data) { return data; });
 
     Promise.all([item_data, location_data, location_hardcore_data]).then(
         function (combined_data) {
