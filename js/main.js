@@ -1,10 +1,26 @@
 $(function() {
+    const updateScenarioFromDatapackageDropdown = function() {
+        let character = 'leon';
+        let scenario = 'a';
+        let dropdown_value = $("select[name='datapackage_scenario']").val();
+
+        if (dropdown_value) {
+            [character, scenario] = dropdown_value.split('_');
+        }
+
+        loadDatapackage(character, scenario);
+    };
+
     if (window.location.hash != '') {
         const nav_link = $(`a.nav-link[href='${window.location.hash}']`);
 
         if (nav_link.length > 0) {
             navLinkActive(nav_link);
             pageActiveFromNavLink(nav_link);
+
+            if (window.location.hash == '#datapackage') {
+                updateScenarioFromDatapackageDropdown();
+            }
         }
     }
 
@@ -20,18 +36,6 @@ $(function() {
         navLinkActive(nav_link);
         pageActiveFromNavLink(nav_link);
     });
-
-    const updateScenarioFromDatapackageDropdown = function() {
-        let character = 'leon';
-        let scenario = 'a';
-        let dropdown_value = $("select[name='datapackage_scenario']").val();
-
-        if (dropdown_value) {
-            [character, scenario] = dropdown_value.split('_');
-        }
-
-        loadDatapackage(character, scenario);
-    };
 
     $('#link_datapackage').click(updateScenarioFromDatapackageDropdown);
     $("select[name='datapackage_scenario']").change(updateScenarioFromDatapackageDropdown);
@@ -57,11 +61,9 @@ function pageActiveFromNavLink(obj) {
 }
 
 function loadDatapackage(character, scenario) {
-    let file_path = window.location.pathname;
-    
-    const item_data = $.get(`${file_path}data/${character}/items.json`).done(function (data) { return data; });
-    const location_data = $.get(`${file_path}data/${character}/${scenario}/locations.json`).done(function (data) { return data; });
-    const location_hardcore_data = $.get(`${file_path}data/${character}/${scenario}/locations_hardcore.json`).done(function (data) { return data; });
+    const item_data = $.get(`data/${character}/items.json`).done(function (data) { return data; });
+    const location_data = $.get(`data/${character}/${scenario}/locations.json`).done(function (data) { return data; });
+    const location_hardcore_data = $.get(`data/${character}/${scenario}/locations_hardcore.json`).done(function (data) { return data; });
 
     Promise.all([item_data, location_data, location_hardcore_data]).then(
         function (combined_data) {
