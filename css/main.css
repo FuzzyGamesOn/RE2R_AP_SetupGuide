@@ -16,6 +16,10 @@ nav {
     font-family: "Bebas Neue", sans-serif;
 }
 
+a {
+    color: #a1d22e;
+}
+
 nav a.navbar-brand {
     font-size: 56px;
     margin: 0 auto;
