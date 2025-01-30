@@ -131,6 +131,7 @@ function exportYAML() {
         `${tab}bonus_start: ${form_data['bonus_start'] == 'on' ? true : false}\n` +
         `${tab}extra_clock_tower_items: ${form_data['extra_clock_tower_items'] == 'on' ? true : false}\n` +
         `${tab}extra_medallions: ${form_data['extra_medallions'] == 'on' ? true : false}\n` +
+        `${tab}early_medallions: ${form_data['early_medallions'] == 'on' ? true : false}\n` +
         `${tab}allow_progression_in_labs: ${form_data['allow_progression_in_labs'] == 'on' ? true : false}\n`;
 
     fileContents += `${tab}cross_scenario_weapons: ${form_data['cross_scenario_weapons']}\n` +
