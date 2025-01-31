@@ -340,16 +340,14 @@
         "name": "Film - Commemorative",
         "decimal": "74",
         "count": 1,
-        "progression": 1,
-        "comments": "I swapped a few of these around, I think they're right but I have been wrong before."
+        "progression": 1
     },
     {
         "type": "Gating",
         "name": "Film - Lion Statue",
         "decimal": "76",
         "count": 1,
-        "progression": 1,
-        "comments": "I swapped a few of these around, I think they're right but I have been wrong before."
+        "progression": 1
     },
     {
         "type": "Gating",
@@ -370,8 +368,7 @@
         "name": "Film - Rising Rookie",
         "decimal": "73",
         "count": 1,
-        "progression": 1,
-        "comments": "I swapped a few of these around, I think they're right but I have been wrong before."
+        "progression": 1
     },
 
     {
@@ -612,6 +609,14 @@
     },
     {
         "type": "Upgrade",
+        "name": "High Capacity Mag - MQ 11",
+        "upgrades": "MQ 11",
+        "decimal": "58",
+        "count": 1,
+        "progression": 0
+    },
+    {
+        "type": "Upgrade",
         "name": "Shoulder Stock - GM 79",
         "upgrades": "GM 79",
         "decimal": "64",
@@ -631,6 +636,21 @@
         "name": "High Voltage Condenser - Spark Shot",
         "upgrades": "Spark Shot",
         "decimal": "66",
+        "count": 1,
+        "progression": 0
+    },
+
+    {
+        "type": "Trap",
+        "name": "Damage Trap",
+        "decimal": "",
+        "count": 1,
+        "progression": 0
+    },
+    {
+        "type": "Trap",
+        "name": "Poison Trap",
+        "decimal": "",
         "count": 1,
         "progression": 0
     },
