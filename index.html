@@ -182,14 +182,15 @@
                                     <option value="troll">Troll</option>
                                 </select>
                             </div>
-                            <div class="form-check">
-                                <input type="checkbox" name="oops_all_rockets" /> <label for="oops_all_rockets">Oops! All Rockets</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" name="oops_all_grenades" /> <label for="oops_all_grenades">Oops! All Grenades</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" name="oops_all_knives" /> <label for="oops_all_knives">Oops! All Knives</label>
+                            <div title = "Enabling this swaps all weapons, weapon ammo, and subweapons to the selected weapon (except progression weapons, of course)">
+                                <label for="oops_all">Oops all:</label>
+                                <select name="oops_all">
+                                    <option title="Weapons, ammo and subweapons will only be swapped as dictated by Cross Scenario Weapons" value="disabled">Disabled</option>
+                                    <option title="Weapons, ammo and subweapons will be swapped out for rockets with a single shot" value="rockets">Rockets</option>
+                                    <option title="Weapons, ammo and subweapons will be swapped out for miniguns with reduced ammo" value="rockets"value="miniguns">Miniguns</option>
+                                    <option title="Weapons, ammo and subweapons will be swapped out for hand grenades" value="grenades">Grenades</option>
+                                    <option title="Weapons, ammo and subweapons will be swapped out for knives" value="knives">Knives</option>
+                                </select>
                             </div>
                         </div>
                         
