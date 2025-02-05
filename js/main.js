@@ -134,8 +134,13 @@ function exportYAML() {
         `${tab}early_medallions: ${form_data['early_medallions'] == 'on' ? true : false}\n` +
         `${tab}allow_progression_in_labs: ${form_data['allow_progression_in_labs'] == 'on' ? true : false}\n`;
 
-    fileContents += `${tab}cross_scenario_weapons: ${form_data['cross_scenario_weapons']}\n` +
-        `${tab}oops_all: ${form_data['oops_all']}\n`;
+    
+    fileContents += `${tab}cross_scenario_weapons: ${form_data['cross_scenario_weapons']}\n`;
+    
+    fileContents += `${tab}oops_all_rockets: ${form_data['oops_all'] == 'rockets' ? true : false }\n` +
+        `${tab}oops_all_miniguns: ${form_data['oops_all'] == 'miniguns' ? true : false }\n` +
+        `${tab}oops_all_grenades: ${form_data['oops_all'] == 'grenades' ? true : false }\n` +
+        `${tab}oops_all_knives: ${form_data['oops_all'] == 'knives' ? true : false }\n`;
 
     fileContents += `${tab}no_first_aid_spray: ${form_data['no_first_aid_spray'] == 'on' ? true : false}\n` +
         `${tab}no_green_herb: ${form_data['no_green_herb'] == 'on' ? true : false}\n` +
