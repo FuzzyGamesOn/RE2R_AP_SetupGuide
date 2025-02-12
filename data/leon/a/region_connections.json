@@ -135,15 +135,13 @@
     { 
         "from": "STARS Office Hallway",
         "to": "Lounge - RPD",
-        "condition": {
-            "items": ["Battery"]
-        }
-    },
-    { 
-        "from": "Lounge - RPD",
-        "to": "Library",
         "condition": {},
         "limitation": "ONE_SIDED_DOOR"
+    },
+    { 
+        "from": "Library",
+        "to": "Lounge - RPD",
+        "condition": {}
     },
     { 
         "from": "Main Hall",
@@ -205,13 +203,20 @@
     },
     { 
         "from": "Library",
+        "to": "Main Hall 3F",
+        "condition": {
+            "items": ["Mechanic Jack Handle"]
+        }
+    },
+    {
+        "from": "Main Hall 3F",
         "to": "Clock Tower",
         "condition": {
-            "items": ["Mechanic Jack Handle", "Small Gear", "Large Gear", "Square Crank", "Fuse - Break Room Hallway", "Boxed Electronic Part 2"]
+            "items": ["Small Gear", "Large Gear", "Square Crank", "Fuse - Break Room Hallway", "Boxed Electronic Part 2"]
         }
     },
     { 
-        "from": "Library",
+        "from": "Main Hall 3F",
         "to": "East Storage Room",
         "condition": {
             "items": ["Mechanic Jack Handle"]
@@ -219,14 +224,13 @@
     },
     { 
         "from": "East Storage Room",
-        "to": "Side Stairs",
-        "limitation": "ONE_SIDED_DOOR"
+        "to": "Side Stairs"
     },
     { 
         "from": "Main Hall",
         "to": "Secret Room",
         "condition": {
-            "items": ["Lion Medallion", "Unicorn Medallion", "Maiden Medallion", "Spade Key", "Bolt Cutters"]
+            "items": ["Lion Medallion", "Unicorn Medallion", "Maiden Medallion", "Spade Key"]
         }
     },
     { 
@@ -314,7 +318,10 @@
         "from": "Side Stairs",
         "to": "Interrogation Room",
         "condition": {
-            "items": ["Club Key", "Lion Medallion", "Unicorn Medallion", "Maiden Medallion", "Square Crank", "Fuse - Break Room Hallway"]
+            "items": [
+                ["Spade Key", "Club Key", "Lion Medallion", "Unicorn Medallion", "Maiden Medallion", "Square Crank", "Fuse - Break Room Hallway"],
+                ["Spade Key", "Club Key", "Lion Medallion", "Unicorn Medallion", "Maiden Medallion", "Mechanic Jack Handle", "Fuse - Break Room Hallway"]
+            ]
         }
     },
     { 
@@ -326,7 +333,10 @@
         "from": "Balcony",
         "to": "Roof",
         "condition": {
-            "items": ["Lion Medallion", "Unicorn Medallion", "Maiden Medallion", "Fuse - Break Room Hallway", "Square Crank"]
+            "items": [
+                ["Spade Key", "Lion Medallion", "Unicorn Medallion", "Maiden Medallion", "Fuse - Break Room Hallway", "Square Crank"],
+                ["Spade Key", "Lion Medallion", "Unicorn Medallion", "Maiden Medallion", "Fuse - Break Room Hallway", "Mechanic Jack Handle"]
+            ]
         }
     },
     { 
