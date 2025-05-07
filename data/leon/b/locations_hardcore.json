@@ -27,7 +27,7 @@
         "folder_path": "RopewayContents/World/Location_RPD/LocationLevel_RPD/Item/common/1F/1FW/DarkRoom/Locker_sm70_100_HandgunB_HardInkribbon"
     },
     {
-        "name": "Table By Door",
+        "name": "Table by Door",
         "region": "East Office",
         "original_item": "Ink Ribbon",
         "condition": {},    
@@ -63,7 +63,7 @@
         "folder_path": "RopewayContents/World/Location_RPD/LocationLevel_RPD/Item/common/InkRibbon"
     },
     {
-        "name": "Chair Across Room",
+        "name": "Chair across Room",
         "region": "Interrogation Room",
         "original_item": "Ink Ribbon",
         "condition": {},    
@@ -81,7 +81,7 @@
         "folder_path": "RopewayContents/World/Location_RPD/LocationLevel_RPD/Item/common/InkRibbon"
     },
     {
-        "name": "Barrels Before Alligator Cutscene",
+        "name": "Barrels before Alligator Cutscene",
         "region": "Sewers Entrance",
         "original_item": "Ink Ribbon",
         "condition": {},    
@@ -99,7 +99,7 @@
         "folder_path": "RopewayContents/World/Location_WasteWater/LocationLevel_WasteWater/Item/common/Inkribbon"
     },
     {
-        "name": "Table Location 2",
+        "name": "On Table 2",
         "region": "Water Injection Chamber",
         "original_item": "Ink Ribbon",
         "condition": {},    
@@ -108,7 +108,7 @@
         "folder_path": "RopewayContents/World/Location_WasteWater/LocationLevel_WasteWater/Item/common/Inkribbon"
     },
     {
-        "name": "Trash Can By Saving Ada",
+        "name": "Trash Can by Saving Ada",
         "region": "Main Power Room",
         "original_item": "Ink Ribbon",
         "condition": {},    
@@ -123,7 +123,8 @@
         "condition": {},    
         "item_object": "sm70_201",
         "parent_object": "sm70_201_Inkribbon_Narea",
-        "folder_path": "RopewayContents/World/Location_Laboratory/LocationLevel_Laboratory/Item/common/InkRibbon"
+        "folder_path": "RopewayContents/World/Location_Laboratory/LocationLevel_Laboratory/Item/common/InkRibbon",
+        "forbid_item": ["Sewers Key", "T-Bar Handle"]
     },
     {
         "name": "Front Desk",
@@ -132,7 +133,8 @@
         "condition": {},    
         "item_object": "sm70_201",
         "parent_object": "sm70_201_Inkribbon_Tarea",
-        "folder_path": "RopewayContents/World/Location_Laboratory/LocationLevel_Laboratory/Item/common/InkRibbon"
+        "folder_path": "RopewayContents/World/Location_Laboratory/LocationLevel_Laboratory/Item/common/InkRibbon",
+        "forbid_item": ["Sewers Key", "T-Bar Handle"]
     },
     {
         "name": "Beside Typewriter",
@@ -141,16 +143,18 @@
         "condition": {},    
         "item_object": "sm70_201",
         "parent_object": "sm70_201_Inkribbon_Garea",
-        "folder_path": "RopewayContents/World/Location_Laboratory/LocationLevel_Laboratory/Item/common/InkRibbon"
+        "folder_path": "RopewayContents/World/Location_Laboratory/LocationLevel_Laboratory/Item/common/InkRibbon",
+        "forbid_item": ["Sewers Key", "T-Bar Handle"]
     },
     {
-        "name": "Boxes By Typewriter",
+        "name": "Boxes by Typewriter",
         "region": "Path to Super Tyrant",
         "original_item": "Ink Ribbon",
         "condition": {},    
         "item_object": "sm70_201",
         "parent_object": "sm70_201",
-        "folder_path": "RopewayContents/World/Location_LaboratoryUndermost/LocationLevel_LaboratoryUndermost/Item/common"
+        "folder_path": "RopewayContents/World/Location_LaboratoryUndermost/LocationLevel_LaboratoryUndermost/Item/common",
+        "forbid_item": ["Sewers Key", "T-Bar Handle"]
     },
     {
         "name": "Next to Gunpowder",
@@ -159,16 +163,32 @@
         "condition": {},    
         "item_object": "sm70_201",
         "parent_object": "sm70_201_G5",
-        "folder_path": "RopewayContents/World/Location_LaboratoryUndermost/LocationLevel_LaboratoryUndermost/Item/common"
+        "folder_path": "RopewayContents/World/Location_LaboratoryUndermost/LocationLevel_LaboratoryUndermost/Item/common",
+        "forbid_item": ["Sewers Key", "T-Bar Handle"]
     },
     {
         "name": "Main Desk 1",
         "region": "Main Hall",
         "remove": true
     },
-	{
+    {
         "name": "Main Desk 2",
         "region": "Main Hall",
         "remove": true
+    },
+    {
+    	"name": "Side Table",
+    	"region": "West Storage Room",
+    	"remove": true
+    },
+    {
+    	"name": "Left Table",
+    	"region": "Workroom",
+    	"remove": true
+    },
+    {
+    	"name": "Before Sanitation Spray",
+    	"region": "Biotesting Lab",
+    	"remove": true
     }
 ]
