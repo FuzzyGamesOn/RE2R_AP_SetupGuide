@@ -59,7 +59,7 @@ function updateWeaponRandoExplanation() {
     }
 };
 
-const updateAmmoPackExplanation = function() {
+function updateAmmoPackExplanation() {
     let dropdown_value = $("select[name='ammo_pack_modifier']").val();
     let explanation = "";
 
@@ -105,7 +105,7 @@ const updateAmmoPackExplanation = function() {
     $('#apm_explanation').html(explanation);
 };
 
-const updateOnTabChange = function() {
+function updateOnTabChange() {
     if (window.location.hash == '#datapackage') {
         updateScenarioFromDatapackageDropdown();
     }
