@@ -171,8 +171,12 @@
         "name": "Boiler Room",
         "zone_id": 1
     },
-	
-	{
+    {
+        "name": "Main Hall 3F",
+        "zone_id": 1
+    },
+
+    {
         "name": "Secret Room",
         "zone_id": 2
     },
@@ -287,6 +291,14 @@
     },
     {
         "name": "Bottom Waterway",
+        "zone_id": 3
+    },
+    {
+        "name": "Waterway Overpass",
+        "zone_id": 3
+    },
+    {
+        "name": "Central Hub",
         "zone_id": 3
     },
     
