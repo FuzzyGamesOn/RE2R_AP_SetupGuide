@@ -1,16 +1,7 @@
+
+
 $(function() {
-    const updateScenarioFromDatapackageDropdown = function() {
-        let character = 'leon';
-        let scenario = 'a';
-        let dropdown_value = $("select[name='datapackage_scenario']").val();
-
-        if (dropdown_value) {
-            [character, scenario] = dropdown_value.split('_');
-        }
-
-        loadDatapackage(character, scenario);
-    };
-
+    
     if (window.location.hash != '') {
         const nav_link = $(`a.nav-link[href='${window.location.hash}']`);
 
@@ -18,12 +9,10 @@ $(function() {
             navLinkActive(nav_link);
             pageActiveFromNavLink(nav_link);
 
-            if (window.location.hash == '#datapackage') {
-                updateScenarioFromDatapackageDropdown();
-            }
+            updateOnTabChange(); 
         }
     }
-
+    
     $('a.nav-link').click(function() {
         navLinkActive($(this));
         pageActiveFromNavLink($(this));
@@ -39,6 +28,8 @@ $(function() {
 
     $('#link_datapackage').click(updateScenarioFromDatapackageDropdown);
     $("select[name='datapackage_scenario']").change(updateScenarioFromDatapackageDropdown);
+    $("select[name='cross_scenario_weapons']").change(updateWeaponRandoExplanation);
+    $("select[name='ammo_pack_modifier']").change(updateAmmoPackExplanation);
 
     $('img').on('click', function(e) {
         $('#imgViewer').empty().append( $(e.currentTarget).clone().removeClass('img-responsive').removeClass('img-thumbnail') );
@@ -58,6 +49,8 @@ function pageActiveFromNavLink(obj) {
     $(targetPage).addClass('active');
 
     history.pushState({}, "", targetPage);
+
+    updateOnTabChange();
 }
 
 function loadDatapackage(character, scenario) {
@@ -110,14 +103,12 @@ function exportYAML() {
         form_data[item['name']] = item['value'];
     }
 
-    console.log(form_data);
-
     const player_name = (form_data['player_name'] != '' ? form_data['player_name'] : 'Player');
 
     let fileContents = `name: ${player_name}\n` +
         "game: Resident Evil 2 Remake\n" +
         "requires:\n" + 
-        `${tab}version: 0.4.6\n\n` +
+        `${tab}version: 0.5.0\n\n` +
         "Resident Evil 2 Remake:\n" +
         `${tab}progression_balancing: 50\n` +
         `${tab}accessibility: items\n`;
@@ -131,12 +122,16 @@ function exportYAML() {
         `${tab}bonus_start: ${form_data['bonus_start'] == 'on' ? true : false}\n` +
         `${tab}extra_clock_tower_items: ${form_data['extra_clock_tower_items'] == 'on' ? true : false}\n` +
         `${tab}extra_medallions: ${form_data['extra_medallions'] == 'on' ? true : false}\n` +
-        `${tab}allow_progression_in_labs: ${form_data['allow_progression_in_labs'] == 'on' ? true : false}\n`;
+        `${tab}early_medallions: ${form_data['early_medallions'] == 'on' ? true : false}\n` +
+        `${tab}allow_progression_in_labs: ${form_data['allow_progression_in_labs'] == 'on' ? true : false}\n` +
+        `${tab}starting_ink_ribbons: ${form_data['starting_ink_ribbons']}\n`;
 
     fileContents += `${tab}cross_scenario_weapons: ${form_data['cross_scenario_weapons']}\n` +
         `${tab}oops_all_rockets: ${form_data['oops_all_rockets'] == 'on' ? true : false}\n` +
+        `${tab}oops_all_miniguns: ${form_data['oops_all_miniguns'] == 'on' ? true : false}\n` +
         `${tab}oops_all_grenades: ${form_data['oops_all_grenades'] == 'on' ? true : false}\n` +
-        `${tab}oops_all_knives: ${form_data['oops_all_knives'] == 'on' ? true : false}\n`;
+        `${tab}oops_all_knives: ${form_data['oops_all_knives'] == 'on' ? true : false}\n` +
+        `${tab}ammo_pack_modifier: ${form_data['ammo_pack_modifier']}\n`;
 
     fileContents += `${tab}no_first_aid_spray: ${form_data['no_first_aid_spray'] == 'on' ? true : false}\n` +
         `${tab}no_green_herb: ${form_data['no_green_herb'] == 'on' ? true : false}\n` +

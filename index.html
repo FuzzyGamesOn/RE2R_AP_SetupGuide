@@ -38,7 +38,7 @@
                     <a class="nav-link" id="link_hosting" href="#hosting">4. Host</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="link_hosting" href="#connecting">5. Connect</a>
+                    <a class="nav-link" id="link_connecting" href="#connecting">5. Connect</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="link_datapackage" href="#datapackage">Datapackage</a>
@@ -111,6 +111,7 @@
                             <div>
                                 <label for="character">Character:</label>
                                 <select name="character">
+                                    <option value="random">Random</option>
                                     <option value="leon">Leon</option>
                                     <option value="claire">Claire</option>
                                 </select>
@@ -118,6 +119,7 @@
                             <div>
                                 <label for="scenario">Scenario:</label>
                                 <select name="scenario">
+                                    <option value="random">Random</option>
                                     <option value="a">Normal (A)</option>
                                     <option value="b">2nd (B)</option>
                                 </select>
@@ -125,13 +127,14 @@
                             <div>
                                 <label for="difficulty">Difficulty:</label>
                                 <select name="difficulty">
-                                    <option value="Assisted" disabled>Assisted</option>
+                                    <option value="random">Random</option>
+                                    <option value="assisted">Assisted</option>
                                     <option value="standard">Standard</option>
                                     <option value="hardcore">Hardcore</option>
                                 </select>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" name="death_link" /> <label for="death_link">DeathLink</label>
+                                <input type="checkbox" name="death_link" id="death_link" /> <label class="checkbox-label" for="death_link">DeathLink</label>
                             </div>
                         </div>
                         
@@ -140,6 +143,7 @@
                             <div>
                                 <label for="starting_hip_pouches">Starting Hip Pouches:</label>
                                 <select name="starting_hip_pouches">
+                                    <option value="random">Random</option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -150,16 +154,39 @@
                                 </select>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" name="bonus_start" /> <label for="bonus_start">Bonus Start</label>
+                                <input type="checkbox" name="bonus_start" id="bonus_start" /> <label class="checkbox-label" for="bonus_start">Bonus Start</label> <span id="recommend_bonus_start">RECOMMENDED</span>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" name="extra_clock_tower_items" /> <label for="extra_clock_tower_items">Extra Clock Tower Items</label>
+                                <input type="checkbox" name="extra_clock_tower_items" id="extra_clock_tower_items" /> <label class="checkbox-label" for="extra_clock_tower_items">Extra Clock Tower Items</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" name="extra_medallions" /> <label for="extra_medallions">Extra Medallions</label>
+                                <input type="checkbox" name="extra_medallions" id="extra_medallions" /> <label class="checkbox-label" for="extra_medallions">Extra Medallions</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" name="allow_progression_in_labs" /> <label for="allow_progression_in_labs">Allow Progression in Labs</label>
+                                <input type="checkbox" name="early_medallions" id="early_medallions" /> <label class="checkbox-label" for="early_medallions">Early Medallions</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="allow_progression_in_labs" id="allow_progression_in_labs" /> <label class="checkbox-label" for="allow_progression_in_labs">Allow Progression in Labs</label>
+                            </div>
+                            <div>
+                                <label for="starting_ink_ribbons">Starting Ink Ribbons:</label>
+                                <select name="starting_ink_ribbons">
+                                    <option value="random">Random</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <span class="option-subtext">Hardcore only.</span>
                             </div>
                         </div>
 
@@ -178,32 +205,55 @@
                                     <option value="all_ammo">All + Ammo</option>
                                     <option value="troll">Troll</option>
                                 </select>
+                                <div id="csw_explanation"></div>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" name="oops_all_rockets" /> <label for="oops_all_rockets">Oops! All Rockets</label>
+                                <input type="checkbox" name="oops_all_rockets" id="oops_all_rockets" /> <label class="checkbox-label" for="oops_all_rockets">Oops! All Rockets</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" name="oops_all_grenades" /> <label for="oops_all_grenades">Oops! All Grenades</label>
+                                <input type="checkbox" name="oops_all_miniguns" id="oops_all_miniguns" /> <label class="checkbox-label" for="oops_all_miniguns">Oops! All Miniguns</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" name="oops_all_knives" /> <label for="oops_all_knives">Oops! All Knives</label>
+                                <input type="checkbox" name="oops_all_grenades" id="oops_all_grenades" /> <label class="checkbox-label" for="oops_all_grenades">Oops! All Grenades</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="oops_all_knives" id="oops_all_knives" /> <label class="checkbox-label" for="oops_all_knives">Oops! All Knives</label>
                             </div>
                         </div>
                         
                         <div class="form-group">
+                            <h4>Ammo Pack Customization</h4>
+
+                            <div>
+                                <label for="ammo_pack_modifier">Ammo Pack Modifier:</label>
+                                <select name="ammo_pack_modifier">
+                                    <option value="none">None</option>
+                                    <option value="max">Max</option>
+                                    <option value="double">Double</option>
+                                    <option value="half">Half</option>
+                                    <option value="only_three">Only Three</option>
+                                    <option value="only_two">Only Two</option>
+                                    <option value="only_one">Only One</option>
+                                    <option value="random_by_type">Random By Type</option>
+                                    <option value="random_always">Random Always</option>
+                                </select>
+                                <div id="apm_explanation"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <h4>Item Removal Challenges</h4>
 
                             <div class="form-check">
-                                <input type="checkbox" name="no_first_aid_spray" /> <label for="no_first_aid_spray">No First Aid Sprays</label>
+                                <input type="checkbox" name="no_first_aid_spray" id="no_first_aid_spray" /> <label class="checkbox-label" for="no_first_aid_spray">No First Aid Sprays</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" name="no_green_herb" /> <label for="no_green_herb">No Green Herbs</label>
+                                <input type="checkbox" name="no_green_herb" id="no_green_herb" /> <label class="checkbox-label" for="no_green_herb">No Green Herbs</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" name="no_red_herb" /> <label for="no_red_herb">No Red Herbs</label>
+                                <input type="checkbox" name="no_red_herb" id="no_red_herb" /> <label class="checkbox-label" for="no_red_herb">No Red Herbs</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" name="no_gunpowder" /> <label for="no_gunpowder">No Gunpowder</label>
+                                <input type="checkbox" name="no_gunpowder" id="no_gunpowder" /> <label class="checkbox-label" for="no_gunpowder">No Gunpowder</label>
                             </div>
                         </div>
                         
@@ -211,7 +261,7 @@
                             <h4>Trap Options</h4>
 
                             <div class="form-check">
-                                <input type="checkbox" name="add_damage_traps" /> <label for="add_damage_traps">Add Damage Traps</label>
+                                <input type="checkbox" name="add_damage_traps" id="add_damage_traps" /> <label class="checkbox-label" for="add_damage_traps">Add Damage Traps</label>
                             </div>
                             <div class="form-subgroup">
                                 <div>
@@ -226,12 +276,12 @@
                                     </select>
                                 </div>
                                 <div class="form-check">
-                                    <input type="checkbox" name="damage_traps_can_kill" /> <label for="damage_traps_can_kill">Damage Traps Can Kill</label>
+                                    <input type="checkbox" name="damage_traps_can_kill" id="damage_traps_can_kill" /> <label class="checkbox-label" for="damage_traps_can_kill">Damage Traps Can Kill</label>
                                 </div>
                             </div>
                             
                             <div class="form-check">
-                                <input type="checkbox" name="add_poison_traps" /> <label for="add_poison_traps">Add Poison Traps</label>
+                                <input type="checkbox" name="add_poison_traps" id="add_poison_traps" /> <label class="checkbox-label" for="add_poison_traps">Add Poison Traps</label>
                             </div>
                             <div class="form-subgroup">
                                 <div>
@@ -314,6 +364,7 @@
                         <h4>If playing solo, you can host locally.</h4>
                         <ul>
                             <li>Double-click the "ArchipelagoServer.exe" in your Archipelago (AP) install to host your solo multiworld.</li>
+                            <li>When a file selector window appears, navigate to the "output" folder of your Archipelago (AP) install and choose the most recent AP_* zip file.</li>
                         </ul>
                     </div>
                     
@@ -323,10 +374,10 @@
                         </div>
                         <h4>Otherwise, host on the website.</h4>
                         <ul>
-                            <li>Go to <a href="https://archipelago.gg/uploads" target="_blank">https://archipelago.gg/uploads</a> and click the "Upload File" button.</li>
+                            <li>Go to <a href="https://archipelago.gg/uploads" target="_blank">https://archipelago.gg/uploads</a> and click "Upload File".</li>
                             <li>Navigate to the "output" folder of your Archipelago (AP) install and choose the most recent AP_* zip file.</li>
-                            <li>(Optionally, click the "Download" link on this page to get the spoiler log for this multiworld.)</li>
-                            <li>Click the "Create New Room" link to start your multiworld room.</li>
+                            <li>(Optional: Click "Download" on this page to get the spoiler log for this multiworld.)</li>
+                            <li>Click "Create New Room" to start your multiworld room.</li>
                         </ul>
                     </div>
 
@@ -401,6 +452,7 @@
         <script src="vendor/js/filesaver-1.3.8.js"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
+        <script src="js/functions.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>
