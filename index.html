@@ -134,9 +134,6 @@
                                     <option value="hardcore">Hardcore</option>
                                 </select>
                             </div>
-                            <div class="form-check">
-                                <input type="checkbox" name="death_link" id="death_link" /> <label class="checkbox-label" for="death_link">DeathLink</label>
-                            </div>
                         </div>
                         
                         <div class="form-group">
@@ -158,16 +155,13 @@
                                 <input type="checkbox" name="bonus_start" id="bonus_start" checked /> <label class="checkbox-label" for="bonus_start">Bonus Start</label> <span id="recommend_bonus_start">RECOMMENDED</span>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" name="extra_clock_tower_items" id="extra_clock_tower_items" /> <label class="checkbox-label" for="extra_clock_tower_items">Extra Clock Tower Items</label>
+                                <input type="checkbox" name="extra_clock_tower_items" id="extra_clock_tower_items" checked /> <label class="checkbox-label" for="extra_clock_tower_items">Extra Clock Tower Items</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" name="extra_medallions" id="extra_medallions" /> <label class="checkbox-label" for="extra_medallions">Extra Medallions</label>
+                                <input type="checkbox" name="extra_medallions" id="extra_medallions" checked /> <label class="checkbox-label" for="extra_medallions">Extra Medallions</label>
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" name="early_medallions" id="early_medallions" /> <label class="checkbox-label" for="early_medallions">Early Medallions</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" name="allow_progression_in_labs" id="allow_progression_in_labs" /> <label class="checkbox-label" for="allow_progression_in_labs">Allow Progression in Labs</label>
+                                <input type="checkbox" name="early_medallions" id="early_medallions" checked /> <label class="checkbox-label" for="early_medallions">Early Medallions</label>
                             </div>
                             <div>
                                 <label for="starting_ink_ribbons">Starting Ink Ribbons:</label>
@@ -192,7 +186,10 @@
                         </div>
 
                         <div class="form-group">
-                            <h4>Weapon Customization</h4>
+                            <h4>
+                                Weapon Customization
+                                <em>Only one of the below two options can be enabled for your playthrough.</em>
+                            </h4>
 
                             <div>
                                 <label for="cross_scenario_weapons">Cross Scenario Weapons:</label>
@@ -202,12 +199,10 @@
                                     <option value="match">Match Level</option>
                                     <option value="full">Full Random</option>
                                     <option value="all">All Weapons</option>
-                                    <option value="full_ammo">Full + Ammo</option>
-                                    <option value="all_ammo">All + Ammo</option>
-                                    <option value="troll">Troll</option>
                                 </select>
                                 <div id="csw_explanation"></div>
                             </div>
+
                             <div title="Enabling this swaps all weapons, weapon ammo, and subweapons to the selected weapon (except progression weapons, of course)">
                                 <label for="oops_all">Replace All Weapons:</label>
                                 <select name="oops_all">
@@ -229,73 +224,18 @@
                                     <option value="none">None</option>
                                     <option value="max">Max</option>
                                     <option value="double">Double</option>
-                                    <option value="half">Half</option>
-                                    <option value="only_three">Only Three</option>
-                                    <option value="only_two">Only Two</option>
-                                    <option value="only_one">Only One</option>
-                                    <option value="random_by_type">Random By Type</option>
-                                    <option value="random_always">Random Always</option>
                                 </select>
                                 <div id="apm_explanation"></div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <h4>Item Removal Challenges</h4>
 
-                            <div class="form-check">
-                                <input type="checkbox" name="no_first_aid_spray" id="no_first_aid_spray" /> <label class="checkbox-label" for="no_first_aid_spray">No First Aid Sprays</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" name="no_green_herb" id="no_green_herb" /> <label class="checkbox-label" for="no_green_herb">No Green Herbs</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" name="no_red_herb" id="no_red_herb" /> <label class="checkbox-label" for="no_red_herb">No Red Herbs</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" name="no_gunpowder" id="no_gunpowder" /> <label class="checkbox-label" for="no_gunpowder">No Gunpowder</label>
-                            </div>
+                        <div class="form-group notice">
+                            <strong>NOTE:</strong> 
+                            <p>The options presented here are limited to options that are considered "safe" for community syncs and asyncs.</p>
+                            <p class="small"><em>Additionally, recommended checkbox options have been enabled.</em></p>
+                            <p>For the full set of available options, you'll need to customize the template YAML provided with the apworld release.</p>
                         </div>
                         
-                        <div class="form-group">
-                            <h4>Trap Options</h4>
-
-                            <div class="form-check">
-                                <input type="checkbox" name="add_damage_traps" id="add_damage_traps" /> <label class="checkbox-label" for="add_damage_traps">Add Damage Traps</label>
-                            </div>
-                            <div class="form-subgroup">
-                                <div>
-                                    <label for="damage_trap_count">Damage Traps Total:</label>
-                                    <select name="damage_trap_count">
-                                        <option value="5">5</option>
-                                        <option value="10">10</option>
-                                        <option value="15">15</option>
-                                        <option value="20">20</option>
-                                        <option value="25">25</option>
-                                        <option value="30">30</option>
-                                    </select>
-                                </div>
-                                <div class="form-check">
-                                    <input type="checkbox" name="damage_traps_can_kill" id="damage_traps_can_kill" /> <label class="checkbox-label" for="damage_traps_can_kill">Damage Traps Can Kill</label>
-                                </div>
-                            </div>
-                            
-                            <div class="form-check">
-                                <input type="checkbox" name="add_poison_traps" id="add_poison_traps" /> <label class="checkbox-label" for="add_poison_traps">Add Poison Traps</label>
-                            </div>
-                            <div class="form-subgroup">
-                                <div>
-                                    <label for="poison_trap_count">Poison Traps Total:</label>
-                                    <select name="poison_trap_count">
-                                        <option value="5">5</option>
-                                        <option value="10">10</option>
-                                        <option value="15">15</option>
-                                        <option value="20">20</option>
-                                        <option value="25">25</option>
-                                        <option value="30">30</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
                         <div class="action-group">
                             <button class="btn btn-primary" onclick="exportYAML()">Generate YAML</button><br />
                             <button class="btn btn-success next-step" data-step="#generation">Next Step: Generate</button>
