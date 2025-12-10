@@ -126,12 +126,14 @@ function exportYAML() {
         `${tab}allow_progression_in_labs: ${form_data['allow_progression_in_labs'] == 'on' ? true : false}\n` +
         `${tab}starting_ink_ribbons: ${form_data['starting_ink_ribbons']}\n`;
 
-    fileContents += `${tab}cross_scenario_weapons: ${form_data['cross_scenario_weapons']}\n` +
-        `${tab}oops_all_rockets: ${form_data['oops_all_rockets'] == 'on' ? true : false}\n` +
-        `${tab}oops_all_miniguns: ${form_data['oops_all_miniguns'] == 'on' ? true : false}\n` +
-        `${tab}oops_all_grenades: ${form_data['oops_all_grenades'] == 'on' ? true : false}\n` +
-        `${tab}oops_all_knives: ${form_data['oops_all_knives'] == 'on' ? true : false}\n` +
-        `${tab}ammo_pack_modifier: ${form_data['ammo_pack_modifier']}\n`;
+    fileContents += `${tab}cross_scenario_weapons: ${form_data['cross_scenario_weapons']}\n`;
+
+    fileContents += `${tab}oops_all_rockets: ${form_data['oops_all'] == 'rockets' }\n` +
+        `${tab}oops_all_miniguns: ${form_data['oops_all'] == 'miniguns' }\n` +
+        `${tab}oops_all_grenades: ${form_data['oops_all'] == 'grenades' }\n` +
+        `${tab}oops_all_knives: ${form_data['oops_all'] == 'knives' }\n`;
+
+    fileContents += `${tab}ammo_pack_modifier: ${form_data['ammo_pack_modifier']}\n`;
 
     fileContents += `${tab}no_first_aid_spray: ${form_data['no_first_aid_spray'] == 'on' ? true : false}\n` +
         `${tab}no_green_herb: ${form_data['no_green_herb'] == 'on' ? true : false}\n` +
