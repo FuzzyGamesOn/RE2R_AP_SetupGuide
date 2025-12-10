@@ -208,17 +208,15 @@
                                 </select>
                                 <div id="csw_explanation"></div>
                             </div>
-                            <div class="form-check">
-                                <input type="checkbox" name="oops_all_rockets" id="oops_all_rockets" /> <label class="checkbox-label" for="oops_all_rockets">Oops! All Rockets</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" name="oops_all_miniguns" id="oops_all_miniguns" /> <label class="checkbox-label" for="oops_all_miniguns">Oops! All Miniguns</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" name="oops_all_grenades" id="oops_all_grenades" /> <label class="checkbox-label" for="oops_all_grenades">Oops! All Grenades</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" name="oops_all_knives" id="oops_all_knives" /> <label class="checkbox-label" for="oops_all_knives">Oops! All Knives</label>
+                            <div title="Enabling this swaps all weapons, weapon ammo, and subweapons to the selected weapon (except progression weapons, of course)">
+                                <label for="oops_all">Replace All Weapons:</label>
+                                <select name="oops_all">
+                                    <option title="Weapons, ammo and subweapons will not be swapped completely for a single weapon" value="disabled">Disabled</option>
+                                    <option title="Weapons, ammo and subweapons will be swapped out for rockets with a single shot" value="rockets">Oops All Rockets!</option>
+                                    <option title="Weapons, ammo and subweapons will be swapped out for miniguns with reduced ammo" value="miniguns">Oops All Miniguns!</option>
+                                    <option title="Weapons, ammo and subweapons will be swapped out for hand grenades" value="grenades">Oops All Grenades!</option>
+                                    <option title="Weapons, ammo and subweapons will be swapped out for knives" value="knives">Oops All Knives!</option>
+                                </select>
                             </div>
                         </div>
                         
