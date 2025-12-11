@@ -108,22 +108,20 @@ function exportYAML() {
     let fileContents = `name: ${player_name}\n` +
         "game: Resident Evil 2 Remake\n" +
         "requires:\n" + 
-        `${tab}version: 0.5.0\n\n` +
+        `${tab}version: 0.6.4\n\n` +
         "Resident Evil 2 Remake:\n" +
         `${tab}progression_balancing: 50\n` +
         `${tab}accessibility: items\n`;
 
     fileContents += `${tab}character: ${form_data['character']}\n` +
         `${tab}scenario: ${form_data['scenario']}\n` +
-        `${tab}difficulty: ${form_data['difficulty']}\n` +
-        `${tab}death_link: ${form_data['death_link'] == 'on' ? true : false}\n`;
+        `${tab}difficulty: ${form_data['difficulty']}\n`;
 
     fileContents += `${tab}starting_hip_pouches: ${form_data['starting_hip_pouches']}\n` +
-        `${tab}bonus_start: ${form_data['bonus_start'] == 'on' ? true : false}\n` +
-        `${tab}extra_clock_tower_items: ${form_data['extra_clock_tower_items'] == 'on' ? true : false}\n` +
-        `${tab}extra_medallions: ${form_data['extra_medallions'] == 'on' ? true : false}\n` +
-        `${tab}early_medallions: ${form_data['early_medallions'] == 'on' ? true : false}\n` +
-        `${tab}allow_progression_in_labs: ${form_data['allow_progression_in_labs'] == 'on' ? true : false}\n` +
+        `${tab}bonus_start: ${form_data['bonus_start'] == 'on'}\n` +
+        `${tab}extra_clock_tower_items: ${form_data['extra_clock_tower_items'] == 'on'}\n` +
+        `${tab}extra_medallions: ${form_data['extra_medallions'] == 'on'}\n` +
+        `${tab}early_medallions: ${form_data['early_medallions'] == 'on'}\n` +
         `${tab}starting_ink_ribbons: ${form_data['starting_ink_ribbons']}\n`;
 
     fileContents += `${tab}cross_scenario_weapons: ${form_data['cross_scenario_weapons']}\n`;
@@ -134,18 +132,6 @@ function exportYAML() {
         `${tab}oops_all_knives: ${form_data['oops_all'] == 'knives' }\n`;
 
     fileContents += `${tab}ammo_pack_modifier: ${form_data['ammo_pack_modifier']}\n`;
-
-    fileContents += `${tab}no_first_aid_spray: ${form_data['no_first_aid_spray'] == 'on' ? true : false}\n` +
-        `${tab}no_green_herb: ${form_data['no_green_herb'] == 'on' ? true : false}\n` +
-        `${tab}no_red_herb: ${form_data['no_red_herb'] == 'on' ? true : false}\n` +
-        `${tab}no_gunpowder: ${form_data['no_gunpowder'] == 'on' ? true : false}\n`;
-
-    fileContents += `${tab}add_damage_traps: ${form_data['add_damage_traps'] == 'on' ? true : false}\n` +
-        `${tab}damage_trap_count: ${form_data['damage_trap_count']}\n` +
-        `${tab}damage_traps_can_kill: ${form_data['damage_traps_can_kill'] == 'on' ? true : false}\n`;
-
-    fileContents += `${tab}add_poison_traps: ${form_data['add_poison_traps'] == 'on' ? true : false}\n` +
-        `${tab}poison_trap_count: ${form_data['poison_trap_count']}\n`;
 
     const file = new Blob([fileContents], { type: 'text/yaml' });
     saveAs(file, `RE2R_${player_name}.yaml`);

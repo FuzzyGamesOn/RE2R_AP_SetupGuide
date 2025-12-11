@@ -159,6 +159,25 @@ div.page div.form-group {
     font-size: 18px;
 }
 
+div.page div.form-group h4 em {
+    display: block;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+div.page div.form-group.notice {
+    background-color: rgba(64, 28, 5, 0.9);
+    border: 5px solid rgba(181, 83, 22);
+}
+
+div.page div.form-group.notice p.small {
+    font-size: 14px;
+    margin: 0 0 15px 0;
+    padding: 0px;
+    color: #777;
+}
+
 div.page div.form-group div.form-check {
     margin-left: -25px;
 }
@@ -246,12 +265,13 @@ button.next-step:hover {
 }
 
 #csw_explanation, #apm_explanation {
+    height: 80px;
     font-size: 14px;
     font-style: italic;
     color: #2296ba;
     border-bottom: 2px #bbb solid;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 #apm_explanation {
